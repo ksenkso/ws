@@ -1,0 +1,55 @@
+.action
+	display: flex
+	border-radius: 3px
+	box-shadow: 0 3px 7px 0 rgba(0, 0, 0, .3)
+	transition: box-shadow .2s ease-in-out
+	&:hover
+		box-shadow: 0 3px 13px 0 rgba(0, 0, 0, .3)
+	&__text
+		padding: 20px
+		display: flex
+		flex-direction: column
+	&__caption
+		font-weight: bold
+		font-size: 3.2em
+		color: $primary-accent-color
+		margin-bottom: 1em
+	&__info
+		display: flex
+	&__column
+		font-size: 2em
+		flex: 1
+		color: $primary-color
+		font-weight: bold
+	&__image
+		width: 80%
+		height: 500px
+		background-size: cover
+		background-position: center
+		align-self: flex-end
+	.valid-until
+		margin-bottom: 1em
+		&__date
+			text-decoration: underline
+	.time-left
+
+		&__text
+			font-size: 3rem
+			color: $primary-accent-color
+		&__counters
+			display: flex
+			justify-content: space-around
+			.counter
+				display: flex
+				flex-direction: column
+				align-items: center
+				&__name
+					font-size: 1rem
+				&__value
+					font-size: 2em
+	.button
+		align-self: flex-start
+		margin-top: 2em
+	&--reversed
+		.action__caption
+			text-align: right

@@ -1,0 +1,46 @@
+.menu
+	@media screen and (max-width: $on-mobile)
+		margin-top: 1em
+		display: flex
+		flex-direction: column
+
+	&__toggle
+		display: none
+		@media screen and (max-width: $on-mobile)
+			display: block
+
+	&__container
+		list-style-type: none
+		padding-left: 0
+		display: flex
+		justify-content: space-around
+		border: 3px solid $primary-color
+		@media screen and (max-width: $on-mobile)
+			display: none
+			flex-direction: column
+
+		@media screen and (min-width: $on-mobile)
+			display: flex !important
+	&__item
+		display: flex
+		justify-content: center
+		align-content: center
+		flex: 1
+		padding: 10px 15px
+
+		color: $primary-accent-color
+		&:hover
+			cursor: pointer
+			color: #fff
+			background-color: $primary-accent-color
+		.item__link
+			display: flex
+			align-items: center
+			text-decoration: none
+			color: currentColor
+			font-weight: bold
+			font-size: 1.1em
+			transition: .2s ease-in-out
+
+			&:link, &:visited
+				text-decoration: none
