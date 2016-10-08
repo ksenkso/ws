@@ -15,6 +15,15 @@
     <?php include_once 'partials/_header.php';?>
     <?php include_once "partials/_menu.php"; ?>
     <?php include "partials/_action.php"; ?>
+    <div class="offers">
+        <?php include "partials/_offer.php"; ?>
+    </div>
+    <div class="offers">
+        <?php include "partials/_offer.php"; ?>
+    </div>
+    <div class="offers">
+        <?php include "partials/_offer.php"; ?>
+    </div>
 </div>
 <script src="js/jquery/jquery.min.js"></script>
 <script src="js/main.js"></script>

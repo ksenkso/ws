@@ -1,8 +1,10 @@
 .action
 	display: flex
+	flex-direction: column
 	border-radius: 3px
 	box-shadow: 0 3px 7px 0 rgba(0, 0, 0, .3)
 	transition: box-shadow .2s ease-in-out
+	margin-bottom: 2rem
 	&:hover
 		box-shadow: 0 3px 13px 0 rgba(0, 0, 0, .3)
 	&__text
@@ -11,28 +13,44 @@
 		flex-direction: column
 	&__caption
 		font-weight: bold
-		font-size: 3.2em
+		font-size: 3.2rem
 		color: $primary-accent-color
 		margin-bottom: 1em
 	&__info
 		display: flex
+		@media screen and (max-width: $on-tablet)
+			padding-bottom: 1rem
+			border-bottom: 1px solid lightgray
+		@media screen and (max-width: $on-mobile)
+			flex-direction: column
 	&__column
+		margin-left: 1em
+		margin-top: 2rem
 		font-size: 2em
 		flex: 1
 		color: $primary-color
 		font-weight: bold
 	&__image
-		width: 80%
-		height: 500px
+		width: 30%
 		background-size: cover
 		background-position: center
-		align-self: flex-end
+		display: flex
+		@media screen and (max-width: $on-mobile)
+			height: 150px
+			width: 100%
+			margin: 1rem 0
 	.valid-until
 		margin-bottom: 1em
+		&--tablet
+			display: none
+			@media screen and (max-width: $on-tablet)
+				display: flex
+				padding-bottom: 1rem
+			.valid-until__date
+				padding-left: .5rem
 		&__date
 			text-decoration: underline
 	.time-left
-
 		&__text
 			font-size: 3rem
 			color: $primary-accent-color
@@ -50,6 +68,15 @@
 	.button
 		align-self: flex-start
 		margin-top: 2em
+		margin-bottom: 1rem
+
 	&--reversed
 		.action__caption
 			text-align: right
+	.column--counters
+		@media screen and (max-width: $on-tablet)
+			display: none
+	.flex
+		display: flex
+		@media screen and (max-width: $on-tablet)
+			flex-direction: column

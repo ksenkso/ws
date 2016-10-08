@@ -9,7 +9,7 @@
   outline: none;
   border-radius: 3px;
   color: white;
-  font-size: 1.2em;
+  font-size: 1.2rem;
   transition: background-color 0.2s ease-in-out; }
   .button:hover {
     cursor: pointer;
@@ -22,9 +22,9 @@
       outline: none;
       border-radius: 3px;
       color: white;
-      font-size: 1.2em;
+      font-size: 1.2rem;
       transition: background-color 0.2s ease-in-out;
-      font-size: 1.9em;
+      font-size: 1.9rem;
       padding: 10px 20px; }
       .button:hover {
         cursor: pointer;
@@ -131,9 +131,11 @@
 
 .action {
   display: flex;
+  flex-direction: column;
   border-radius: 3px;
   box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.3);
-  transition: box-shadow 0.2s ease-in-out; }
+  transition: box-shadow 0.2s ease-in-out;
+  margin-bottom: 2rem; }
   .action:hover {
     box-shadow: 0 3px 13px 0 rgba(0, 0, 0, 0.3); }
   .action__text {
@@ -142,24 +144,45 @@
     flex-direction: column; }
   .action__caption {
     font-weight: bold;
-    font-size: 3.2em;
+    font-size: 3.2rem;
     color: #43afda;
     margin-bottom: 1em; }
   .action__info {
     display: flex; }
+    @media screen and (max-width: 992px) {
+      .action__info {
+        padding-bottom: 1rem;
+        border-bottom: 1px solid lightgray; } }
+    @media screen and (max-width: 480px) {
+      .action__info {
+        flex-direction: column; } }
   .action__column {
+    margin-left: 1em;
+    margin-top: 2rem;
     font-size: 2em;
     flex: 1;
     color: #00b9ee;
     font-weight: bold; }
   .action__image {
-    width: 80%;
-    height: 500px;
+    width: 30%;
     background-size: cover;
     background-position: center;
-    align-self: flex-end; }
+    display: flex; }
+    @media screen and (max-width: 480px) {
+      .action__image {
+        height: 150px;
+        width: 100%;
+        margin: 1rem 0; } }
   .action .valid-until {
     margin-bottom: 1em; }
+    .action .valid-until--tablet {
+      display: none; }
+      @media screen and (max-width: 992px) {
+        .action .valid-until--tablet {
+          display: flex;
+          padding-bottom: 1rem; } }
+      .action .valid-until--tablet .valid-until__date {
+        padding-left: 0.5rem; }
     .action .valid-until__date {
       text-decoration: underline; }
   .action .time-left__text {
@@ -178,9 +201,62 @@
         font-size: 2em; }
   .action .button {
     align-self: flex-start;
-    margin-top: 2em; }
+    margin-top: 2em;
+    margin-bottom: 1rem; }
   .action--reversed .action__caption {
     text-align: right; }
+  @media screen and (max-width: 992px) {
+    .action .column--counters {
+      display: none; } }
+  .action .flex {
+    display: flex; }
+    @media screen and (max-width: 992px) {
+      .action .flex {
+        flex-direction: column; } }
+
+.offers {
+  display: flex;
+  justify-content: space-around; }
+  @media screen and (max-width: 480px) {
+    .offers {
+      flex-direction: column;
+      align-items: center; } }
+
+.offer {
+  padding: 20px;
+  margin: 2rem 0;
+  max-width: 500px;
+  box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column; }
+  @media screen and (max-width: 992px) {
+    .offer {
+      max-width: 250px; }
+      .offer__description {
+        width: 80% !important; } }
+  .offer__caption {
+    font-size: 2rem;
+    color: #43afda;
+    align-self: flex-start;
+    font-weight: bold; }
+  .offer__description {
+    width: 50%;
+    padding: 2rem 0;
+    font-size: 1.5rem;
+    color: #00b9ee; }
+  .offer__button {
+    padding: 5px 10px;
+    background-color: #00b9ee;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    color: white;
+    font-size: 1.2rem;
+    transition: background-color 0.2s ease-in-out;
+    align-self: flex-end; }
+    .offer__button:hover {
+      cursor: pointer;
+      background-color: #43afda; }
 
 html, body {
   font-family: Arial;
@@ -188,5 +264,28 @@ html, body {
   @media screen and (max-width: 992px) {
     html, body {
       font-size: 14px; } }
+
+.page--about .page__title {
+  color: #43afda;
+  font-size: 3rem; }
+.page--about .section__title {
+  color: #43afda; }
+.page--about .section__text {
+  color: #997443;
+  font-size: 1.2rem; }
+
+.form__container {
+  margin: 0 auto;
+  max-width: 600px;
+  overflow: hidden; }
+  .form__container .window__preview img {
+    width: 200px; }
+.form__states {
+  width: 1800px;
+  display: flex;
+  transition: all 0.3s ease-in-out; }
+.form__state {
+  margin: 50px;
+  width: 500px; }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,8 +1,8 @@
 class Form {
 	constructor(element) {
 		this.form = element;
-		this.statesContainer = element.querySelector('.form__states');
-		this.states = [].slice.call(element.querySelectorAll('.form__state'));
+		this.statesContainer = element.find('.form__states')[0];
+		this.states = [].slice.call(element.find('.form__state'));
 		this.currentState = 0;
 	}
 
@@ -27,4 +27,4 @@ class Form {
 
 }
 
-let form = new Form($('.form'));
+var form = new Form($('.form__container'));
